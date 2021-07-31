@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <!-- Esta es una forma de agregar un boton de menu-->
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="abrirMenu()" slot="start" >
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    
+
+
+    <ion-title color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-item *ngFor="let ruta of rutas | async" [routerLink]="ruta.redirectTo" detail>
+      <ion-icon slot="start" [name]="ruta.icon" color="primary"></ion-icon>
+      {{ruta.name}}
+
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-list>
+    
+    <ion-item *ngFor="let ruta of rutas">
+      <ion-button [routerLink]="ruta.ruta" shape="round">
+        {{ruta.titulo}}
+      </ion-button>
+    </ion-item>
+  </ion-list> -->
+
+
+
+  <!-- <ion-button routerLink="/alert" shape="round">
+    Alert
+  </ion-button>
+  <ion-button routerLink="/action-sheet" shape="round">
+    Action Sheet
+  </ion-button> -->
+
+</ion-content>
